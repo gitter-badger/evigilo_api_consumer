@@ -1,6 +1,10 @@
-# EvigiloApiConsumer
+# Evigilo Api Consumer
 
-TODO: Write a gem description
+![Evigilo Logo](http://aviioblog.s3.amazonaws.com/screenshot-kensodevVC75M0a.jpg-2014-12-22-np7n4.png)
+
+
+This is an API consumer gem for [Evigilo](https://github.com/gogobot/evigilo)
+
 
 ## Installation
 
@@ -18,9 +22,25 @@ Or install it yourself as:
 
     $ gem install evigilo_api_consumer
 
+## Configuration
+
+Once you install the gem in your application, you need to configure where your evigilo web api is hosted.
+
+For this example, I will use the sample app hosted on heroku
+
+```ruby
+EvigiloApiConsumer.configure do |config|
+  config.base_uri = "https://stark-dusk-7088.herokuapp.com"
+end
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+* `Consumer.version(‘version-id’)
+* `Consumer.store(‘users’, 1, ‘create’, { name: [‘Avi’, ‘NewAvi’] })
+
+*More endpoints support coming soon*
+
 
 ## Contributing
 
@@ -29,3 +49,7 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## License
+
+As always, the license it MIT

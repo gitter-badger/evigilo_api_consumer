@@ -3,10 +3,12 @@ require "evigilo_api_consumer/configuration"
 
 module EvigiloApiConsumer
   def self.configuration
-    @configuration ||= Configuration.new
+    @configuration ||= EvigiloApiConsumer::Configuration.new
   end
 
   def self.configure
-    yield(configuration)
+    yield(self.configuration)
   end
 end
+
+require 'evigilo_api_consumer/consumer'

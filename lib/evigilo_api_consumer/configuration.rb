@@ -1,3 +1,5 @@
 module EvigiloApiConsumer
-  Configuration = Struct.new(:base_url)
+  class Configuration
+    attr_accessor :base_uri
+  end
 end
