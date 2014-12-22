@@ -36,8 +36,8 @@ end
 
 ## Usage
 
-* `Consumer.version(‘version-id’)
-* `Consumer.store(‘users’, 1, ‘create’, { name: [‘Avi’, ‘NewAvi’] })
+* `Consumer.version(‘version-id’)`
+* `Consumer.store(‘users’, 1, ‘create’, { name: [‘Avi’, ‘NewAvi’] })`
 
 *More endpoints support coming soon*
 
