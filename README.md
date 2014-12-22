@@ -31,6 +31,8 @@ For this example, I will use the sample app hosted on heroku
 ```ruby
 EvigiloApiConsumer.configure do |config|
   config.base_uri = "https://stark-dusk-7088.herokuapp.com"
+  config.username = "some_username" # For HTTP basic auth
+  config.password = "some_password" # For basic auth
 end
 ```
 

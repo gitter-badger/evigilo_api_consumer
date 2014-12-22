@@ -5,6 +5,15 @@ module EvigiloApiConsumer
     include HTTParty
     base_uri ::EvigiloApiConsumer.configuration.base_uri
 
+    def self.default_options
+      {
+        basic_auth: {
+          username: EvigiloApiConsumer.configuration.username,
+          password: EvigiloApiConsumer.configuration.password
+        }
+      }
+    end
+
     def self.get_options(change_hash)
       {
         query: {
@@ -25,7 +34,7 @@ module EvigiloApiConsumer
 
     def self.query(url, method = :get, options = {})
       url = "#{EvigiloApiConsumer.configuration.base_uri}/#{url}"
-      response = self.send(method, url, options)
+      response = self.send(method, url, options.merge(self.default_options))
       JSON.parse(response.body)
     end
   end
