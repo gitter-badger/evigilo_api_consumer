@@ -10,7 +10,7 @@ describe EvigiloApiConsumer::Consumer do
 
   it 'sends a post and receives back a response' do
     json_response = File.read('spec/fixtures/store_response.json')
-    subject.should_receive(:query).with("store/users/1/create", :post, { query: { data: change_hash } }).and_return(json_response)
+    subject.should_receive(:query).with("store/users/1/create", :post, { body: { data: change_hash }.to_json }).and_return(json_response)
     subject.store('users', 1, 'create', change_hash)
   end
 

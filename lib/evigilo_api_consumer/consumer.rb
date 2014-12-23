@@ -10,15 +10,14 @@ module EvigiloApiConsumer
         basic_auth: {
           username: EvigiloApiConsumer.configuration.username,
           password: EvigiloApiConsumer.configuration.password
-        }
+        },
+        headers: { 'Content-Type' => 'application/json' }
       }
     end
 
     def self.get_options(change_hash)
       {
-        query: {
-          data: change_hash
-        }
+        body: { data: change_hash }.to_json
       }
     end
 
@@ -28,8 +27,7 @@ module EvigiloApiConsumer
     end
 
     def self.get_version(version)
-      url = "versions/#{version}"
-      query(url)
+      query("versions/#{version}")
     end
 
     def self.query(url, method = :get, options = {})
