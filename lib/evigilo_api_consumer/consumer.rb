@@ -15,15 +15,16 @@ module EvigiloApiConsumer
       }
     end
 
-    def self.get_options(change_hash)
+    def self.get_options(change_hash, snapshot={})
       {
-        body: { data: change_hash }.to_json
+        body: { data: change_hash,
+                snapshot: snapshot }.to_json
       }
     end
 
-    def self.store(object_name, object_id, action, change_hash)
+    def self.store(object_name, object_id, action, change_hash, snapshot={})
       url = "store/#{object_name}/#{object_id}/#{action}"
-      query(url, :post, get_options(change_hash))
+      query(url, :post, get_options(change_hash, snapshot))
     end
 
     def self.get_version(version)
