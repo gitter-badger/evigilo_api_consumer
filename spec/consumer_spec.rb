@@ -18,4 +18,9 @@ describe EvigiloApiConsumer::Consumer do
     subject.should_receive(:query).with("versions/XXXX")
     subject.get_version("XXXX")
   end
+
+  it 'sends the correct get request for available versions of a particular object' do
+    subject.should_receive(:query).with("versions/Restaurant/1234567")
+    subject.get_available_versions("Restaurant", "1234567")
+  end
 end
