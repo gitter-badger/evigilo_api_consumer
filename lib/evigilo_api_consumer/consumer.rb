@@ -31,6 +31,10 @@ module EvigiloApiConsumer
       query("versions/#{version}")
     end
 
+    def self.get_available_versions(table_name, id)
+      query("versions/#{table_name}/#{id}")
+    end
+
     def self.query(url, method = :get, options = {})
       url = "#{EvigiloApiConsumer.configuration.base_uri}/#{url}"
       response = self.send(method, url, options.merge(self.default_options))
