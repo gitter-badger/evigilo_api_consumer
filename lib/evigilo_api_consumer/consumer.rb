@@ -1,6 +1,6 @@
 require 'httparty'
-require 'json'
 require 'active_support'
+require 'multi_json'
 
 module EvigiloApiConsumer
   class Consumer
@@ -19,9 +19,8 @@ module EvigiloApiConsumer
 
     def self.get_options(change_hash, snapshot={})
       hash = { data: change_hash, snapshot: snapshot }
-      json = ActiveSupport::JSON.encode(hash)
       {
-        body: "#{json}"
+        body: MultiJson.encode(hash)
       }
     end
 
