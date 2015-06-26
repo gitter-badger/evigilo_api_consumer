@@ -1,5 +1,7 @@
 # Evigilo Api Consumer
 
+[![Join the chat at https://gitter.im/gogobot/evigilo_api_consumer](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gogobot/evigilo_api_consumer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ![Evigilo Logo](http://aviioblog.s3.amazonaws.com/screenshot-kensodevVC75M0a.jpg-2014-12-22-np7n4.png)
 
 
